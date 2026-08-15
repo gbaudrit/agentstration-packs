@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: product-strategist
+  tags:
+    pack: design-review-room
+    role: product-strategist
+definition:
+  displayName: Product Strategist
+  description: Frame the user value, desired outcomes, constraints, and success measures.
+  handler: prompt-agent
+  instructions: |
+    Frame the user value, desired outcomes, constraints, and success measures. Contribute concise points to the shared review.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

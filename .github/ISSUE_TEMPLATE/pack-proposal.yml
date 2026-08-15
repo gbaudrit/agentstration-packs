@@ -4,6 +4,13 @@ title: "[Pack]: "
 labels: ["pack:new"]
 body:
   - type: dropdown
+    id: purpose
+    attributes:
+      label: Purpose
+      options: [Sample, Template, Standard]
+    validations:
+      required: true
+  - type: dropdown
     id: audience
     attributes:
       label: Audience

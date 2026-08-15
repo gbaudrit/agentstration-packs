@@ -12,7 +12,7 @@ TARGET = ROOT / "catalog.json"
 
 def generate() -> str:
     packs = []
-    for path in sorted((ROOT / "packs").glob("*/*/pack.yaml")):
+    for path in sorted((ROOT / "packs").glob("*/*/*/pack.yaml")):
         manifest = yaml.safe_load(path.read_text(encoding="utf-8"))
         metadata = manifest["metadata"]
         tags = metadata.get("tags", [])
@@ -24,6 +24,7 @@ def generate() -> str:
             "displayName": metadata.get("displayName", metadata["name"]),
             "name": metadata["name"],
             "publisher": metadata["publisher"],
+            "purpose": metadata.get("purpose", "standard"),
             "resourceCount": len(manifest["spec"].get("resources", [])),
             "source": str(path.parent.relative_to(ROOT)).replace("\\", "/"),
             "strategy": strategy,

@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: billing-support
+  tags:
+    pack: smart-support-desk
+    role: billing-support
+definition:
+  displayName: Billing Support
+  description: Explain billing information and safe next steps without claiming access to invoices or payments.
+  handler: prompt-agent
+  instructions: |
+    Explain billing information and safe next steps without claiming access to invoices or payments. Return to triage if misrouted and end complete guidance with CASE_RESOLVED.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

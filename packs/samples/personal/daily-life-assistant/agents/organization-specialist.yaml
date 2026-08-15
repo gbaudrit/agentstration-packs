@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: organization-specialist
+  tags:
+    pack: daily-life-assistant
+    role: organization-specialist
+definition:
+  displayName: Organization Specialist
+  description: Handle schedules, lists, prioritization, and everyday planning.
+  handler: prompt-agent
+  instructions: |
+    Handle schedules, lists, prioritization, and everyday planning. Return to the concierge if the request belongs elsewhere and end a complete answer with CASE_COMPLETE.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

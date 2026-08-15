@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: delivery-manager
+  tags:
+    pack: adaptive-delivery-plan
+    role: delivery-manager
+definition:
+  displayName: Delivery Manager
+  description: Manage the analysis and planning process.
+  handler: prompt-agent
+  instructions: |
+    Manage the analysis and planning process. Build a plan, select specialists dynamically, assess progress, recover from stalls, and produce the final delivery plan. Do not request plan sign-off in this autonomous flow.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

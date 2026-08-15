@@ -9,6 +9,8 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "packs"
 AUDIENCES = {"personal", "professional", "universal"}
+PURPOSES = {"sample", "template", "standard"}
+PURPOSE_COLLECTIONS = {"sample": "samples", "template": "templates", "standard": "standard"}
 SUPPORTED_KINDS = {"ModelProvider", "RuntimeProfile", "ModelProfile", "Agent", "Flow", "Entry"}
 NAME = re.compile(r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$")
@@ -36,6 +38,7 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
     metadata = manifest.get("metadata") or {}
     spec = manifest.get("spec") or {}
     audience = metadata.get("audience")
+    purpose = metadata.get("purpose")
     name = metadata.get("name")
     publisher = metadata.get("publisher")
     version = metadata.get("version")
@@ -48,6 +51,10 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
         fail(errors, pack_file, "metadata.audience must be personal, professional, or universal")
     if root.parent.name != audience:
         fail(errors, pack_file, "directory collection must match metadata.audience")
+    if purpose not in PURPOSES:
+        fail(errors, pack_file, "metadata.purpose must be sample, template, or standard")
+    if purpose in PURPOSE_COLLECTIONS and root.parent.parent.name != PURPOSE_COLLECTIONS[purpose]:
+        fail(errors, pack_file, "directory purpose collection must match metadata.purpose")
     if root.name != name:
         fail(errors, pack_file, "directory name must match metadata.name")
     if not isinstance(name, str) or not NAME.fullmatch(name):
@@ -171,7 +178,7 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
 
 def main() -> int:
     errors: list[str] = []
-    pack_files = sorted(PACKS.glob("*/*/pack.yaml"))
+    pack_files = sorted(PACKS.glob("*/*/*/pack.yaml"))
     if not pack_files:
         errors.append("no Packs found")
     for pack_file in pack_files:

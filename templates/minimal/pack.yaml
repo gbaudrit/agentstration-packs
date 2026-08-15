@@ -5,9 +5,10 @@ metadata:
   publisher: agentstration
   version: 0.1.0
   audience: universal
+  purpose: template
   displayName: Replace Me
   description: Replace this description.
-  categories: [sample]
+  categories: [template]
   tags: [orchestration, sequential]
 spec:
   resources:

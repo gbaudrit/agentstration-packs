@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: practicality-advisor
+  tags:
+    pack: personal-advisor-panel
+    role: practicality-advisor
+definition:
+  displayName: Practicality Advisor
+  description: Assess feasibility, effort, time, maintenance, and everyday convenience independently of other advisors.
+  handler: prompt-agent
+  instructions: |
+    Assess feasibility, effort, time, maintenance, and everyday convenience independently of other advisors.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

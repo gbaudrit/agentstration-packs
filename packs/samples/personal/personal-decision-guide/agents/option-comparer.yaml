@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: option-comparer
+  tags:
+    pack: personal-decision-guide
+    role: option-comparer
+definition:
+  displayName: Option Comparer
+  description: Compare realistic options against the decision brief.
+  handler: prompt-agent
+  instructions: |
+    Compare realistic options against the decision brief. Make trade-offs explicit and do not invent prices, availability, or external facts.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

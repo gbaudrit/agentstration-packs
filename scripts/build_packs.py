@@ -15,7 +15,7 @@ CANONICAL_TIME = (2026, 1, 1, 0, 0, 0)
 
 
 def pack_sources(selected: str | None) -> list[Path]:
-    values = sorted(PACKS.glob("*/*/pack.yaml"))
+    values = sorted(PACKS.glob("*/*/*/pack.yaml"))
     if selected:
         values = [path for path in values if path.parent.name == selected]
         if not values:

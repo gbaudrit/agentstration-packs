@@ -1,0 +1,38 @@
+apiVersion: agentstration.io/v1
+kind: Entry
+metadata:
+  name: main
+definition:
+  displayName: Design Review Room
+  description: Run a bounded collaborative design review and record a final decision.
+  presentation:
+    kind: prompt
+    placeholder: Describe the design decision to review…
+    icon: briefcase
+    allowAttachments: false
+    allowVoiceInput: false
+    suggestions:
+      - label: Review whether this feature
+        value: Review whether this feature needs a workflow or orchestration.
+      - label: Challenge this API design
+        value: Challenge this API design and record a decision.
+    fields:
+      - name: request
+        type: prompt
+        label: Request
+        description: Provide the objective, context, and constraints.
+        placeholder: Describe the design decision to review…
+        required: true
+        order: 0
+        role: primaryInput
+  binding:
+    kind: flow
+    resourceId: main
+  behavior:
+    taskCreationMode: automatic
+    allowConversation: true
+    streamResponse: true
+    conversation:
+      enabled: true
+  publish: true
+
