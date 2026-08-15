@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 import shutil
 import tempfile
 import zipfile
@@ -60,8 +61,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
     parser.add_argument("--pack")
+    parser.add_argument("--list-json", action="store_true")
     parser.add_argument("--verify-deterministic", action="store_true")
     args = parser.parse_args()
+    if args.list_json:
+        print(json.dumps([path.parent.name for path in pack_sources(None)]))
+        return 0
     first = build(args.output, args.pack)
     if args.verify_deterministic:
         with tempfile.TemporaryDirectory() as directory:
