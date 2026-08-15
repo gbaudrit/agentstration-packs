@@ -1,29 +1,29 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: weekend-planning-room
 definition:
-  displayName: Design Review Room
-  description: Run a bounded collaborative design review and record a final decision.
+  displayName: Weekend Planning Room
+  description: Build a balanced weekend plan through one bounded shared discussion.
   version: 0.1.0
   enabled: true
   spec:
     flowKind: orchestration
     participants:
       - kind: agent
-        id: product-strategist
+        id: activity-scout
       - kind: agent
-        id: solution-architect
+        id: budget-keeper
       - kind: agent
-        id: critical-reviewer
+        id: logistics-planner
       - kind: agent
-        id: decision-recorder
+        id: plan-editor
     pattern:
       strategy: groupChat
       maximumIterations: 4
   metadata:
-    pack: design-review-room
-    audience: professional
+    pack: weekend-planning-room
+    audience: personal
     strategy: groupChat
   publish: true
   activate: true

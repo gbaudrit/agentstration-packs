@@ -20,5 +20,5 @@ definition:
     - agents/requirements-analyst.yaml
     - agents/solution-designer.yaml
     - agents/quality-reviewer.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/brief-to-spec.yaml
+    - entries/brief-to-spec.yaml

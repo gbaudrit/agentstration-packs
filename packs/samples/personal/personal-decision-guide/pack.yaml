@@ -20,5 +20,5 @@ definition:
     - agents/need-clarifier.yaml
     - agents/option-comparer.yaml
     - agents/recommendation-writer.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/personal-decision-guide.yaml
+    - entries/personal-decision-guide.yaml

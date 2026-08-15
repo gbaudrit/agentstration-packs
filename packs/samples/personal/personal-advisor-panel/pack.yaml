@@ -20,5 +20,5 @@ definition:
     - agents/budget-advisor.yaml
     - agents/practicality-advisor.yaml
     - agents/sustainability-advisor.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/personal-advisor-panel.yaml
+    - entries/personal-advisor-panel.yaml

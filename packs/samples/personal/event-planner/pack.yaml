@@ -22,5 +22,5 @@ definition:
     - agents/logistics-planner.yaml
     - agents/budget-planner.yaml
     - agents/checklist-writer.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/event-planner.yaml
+    - entries/event-planner.yaml

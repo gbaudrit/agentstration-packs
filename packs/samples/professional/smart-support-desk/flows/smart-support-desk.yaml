@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: smart-support-desk
 definition:
   displayName: Smart Support Desk
   description: Qualify a support request and hand it to the appropriate specialist.

@@ -21,5 +21,5 @@ definition:
     - agents/solution-architect.yaml
     - agents/critical-reviewer.yaml
     - agents/decision-recorder.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/design-review-room.yaml
+    - entries/design-review-room.yaml

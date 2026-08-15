@@ -1,33 +1,33 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: daily-life-assistant
 definition:
-  displayName: Smart Support Desk
-  description: Qualify a support request and hand it to the appropriate specialist.
+  displayName: Daily Life Assistant
+  description: Route an everyday request to the most relevant declared specialist.
   presentation:
     kind: prompt
-    placeholder: Describe the support request…
-    icon: briefcase
+    placeholder: Describe what you need help with…
+    icon: sparkles
     allowAttachments: false
     allowVoiceInput: false
     suggestions:
-      - label: A user cannot start
-        value: A user cannot start the application.
-      - label: A customer has a
-        value: A customer has a question about an invoice.
+      - label: Help me organize a
+        value: Help me organize a busy week.
+      - label: My phone will not
+        value: My phone will not connect to my television.
     fields:
       - name: request
         type: prompt
         label: Request
         description: Provide the objective, context, and constraints.
-        placeholder: Describe the support request…
+        placeholder: Describe what you need help with…
         required: true
         order: 0
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: daily-life-assistant
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

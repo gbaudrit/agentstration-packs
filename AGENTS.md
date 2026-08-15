@@ -9,6 +9,7 @@ This repository contains official Agentstration Pack source, not product runtime
 - Never add secrets, personal data, generated ZIP files, or undeclared external integrations.
 - Unqualified resource references must resolve inside the Pack namespace. External references require an explicit namespace.
 - Every Flow must be published and active; every Entry must bind to a contained Flow.
+- A Sample's primary Flow and Entry, including their file names, must match the Pack name. Name additional resources `<pack-name>-<role>`.
 - Keep orchestration bounded and preserve the documented behavior of Sequential, Concurrent, Handoff, Group Chat, and Magentic.
 - Update README, CHANGELOG, validation, and generated catalog metadata together.
 - Do not assert exact LLM prose in tests. Validate structure, participants, routing, bounds, and terminal state.

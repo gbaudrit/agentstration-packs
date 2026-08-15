@@ -10,7 +10,7 @@ Build a balanced weekend plan through one bounded shared discussion.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `groupChat` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.weekend-planning-room`.
+This Pack is an executable example of Agentstration's `groupChat` orchestration. It installs its Agents, one published active Flow named `weekend-planning-room`, and one conversational Entry named `weekend-planning-room` into the namespace `agentstration.weekend-planning-room`.
 
 ## Try it
 

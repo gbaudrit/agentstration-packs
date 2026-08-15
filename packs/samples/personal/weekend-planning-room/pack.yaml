@@ -21,5 +21,5 @@ definition:
     - agents/budget-keeper.yaml
     - agents/logistics-planner.yaml
     - agents/plan-editor.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/weekend-planning-room.yaml
+    - entries/weekend-planning-room.yaml

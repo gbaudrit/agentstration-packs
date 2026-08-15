@@ -10,7 +10,7 @@ Turn a product or engineering brief into a reviewed implementation specification
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `sequential` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.brief-to-spec`.
+This Pack is an executable example of Agentstration's `sequential` orchestration. It installs its Agents, one published active Flow named `brief-to-spec`, and one conversational Entry named `brief-to-spec` into the namespace `agentstration.brief-to-spec`.
 
 ## Try it
 

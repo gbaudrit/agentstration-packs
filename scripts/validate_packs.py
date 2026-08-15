@@ -114,6 +114,12 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
 
     agent_names = {name for _, kind, name, _ in documents if kind == "Agent"}
     flow_names = {name for _, kind, name, _ in documents if kind == "Flow"}
+    entry_names = {name for _, kind, name, _ in documents if kind == "Entry"}
+    if purpose == "sample":
+        if name not in flow_names or f"flows/{name}.yaml" not in resources:
+            fail(errors, pack_file, "a Sample's primary Flow name and file must match metadata.name")
+        if name not in entry_names or f"entries/{name}.yaml" not in resources:
+            fail(errors, pack_file, "a Sample's primary Entry name and file must match metadata.name")
     for relative, kind, resource_name, document in documents:
         path = root / relative
         definition = document.get("definition") or {}

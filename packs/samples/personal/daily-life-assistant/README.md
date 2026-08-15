@@ -10,7 +10,7 @@ Route an everyday request to the most relevant declared specialist.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `handoff` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.daily-life-assistant`.
+This Pack is an executable example of Agentstration's `handoff` orchestration. It installs its Agents, one published active Flow named `daily-life-assistant`, and one conversational Entry named `daily-life-assistant` into the namespace `agentstration.daily-life-assistant`.
 
 ## Try it
 

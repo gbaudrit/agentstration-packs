@@ -10,7 +10,7 @@ Qualify a support request and hand it to the appropriate specialist.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `handoff` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.smart-support-desk`.
+This Pack is an executable example of Agentstration's `handoff` orchestration. It installs its Agents, one published active Flow named `smart-support-desk`, and one conversational Entry named `smart-support-desk` into the namespace `agentstration.smart-support-desk`.
 
 ## Try it
 

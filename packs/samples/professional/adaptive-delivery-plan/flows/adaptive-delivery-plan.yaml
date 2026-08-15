@@ -1,34 +1,34 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: adaptive-delivery-plan
 definition:
-  displayName: Adaptive Event Planner
-  description: Adaptively coordinate specialists to prepare a small personal event.
+  displayName: Adaptive Delivery Plan
+  description: Adaptively coordinate specialists to build a delivery plan for a complex initiative.
   version: 0.1.0
   enabled: true
   spec:
     flowKind: orchestration
     participants:
       - kind: agent
-        id: program-designer
+        id: requirements-analyst
       - kind: agent
-        id: logistics-planner
+        id: solution-architect
       - kind: agent
-        id: budget-planner
+        id: risk-analyst
       - kind: agent
-        id: checklist-writer
+        id: delivery-planner
     pattern:
       strategy: magentic
       manager:
         kind: agent
-        id: event-coordinator
+        id: delivery-manager
       maximumRounds: 12
       maximumStalls: 3
       maximumResets: 1
   metadata:
-    pack: event-planner
-    audience: personal
+    pack: adaptive-delivery-plan
+    audience: professional
     strategy: magentic
   publish: true
   activate: true

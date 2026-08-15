@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: adaptive-delivery-plan
 definition:
   displayName: Adaptive Delivery Plan
   description: Adaptively coordinate specialists to build a delivery plan for a complex initiative.
@@ -27,7 +27,7 @@ definition:
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: adaptive-delivery-plan
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

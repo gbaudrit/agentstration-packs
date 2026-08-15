@@ -10,7 +10,7 @@ Run a bounded collaborative design review and record a final decision.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `groupChat` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.design-review-room`.
+This Pack is an executable example of Agentstration's `groupChat` orchestration. It installs its Agents, one published active Flow named `design-review-room`, and one conversational Entry named `design-review-room` into the namespace `agentstration.design-review-room`.
 
 ## Try it
 

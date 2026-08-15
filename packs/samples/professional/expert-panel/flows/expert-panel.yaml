@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: expert-panel
 definition:
   displayName: Independent Expert Panel
   description: Run independent security, operability, and experience reviews.
