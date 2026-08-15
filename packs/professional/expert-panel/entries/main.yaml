@@ -1,0 +1,37 @@
+apiVersion: agentstration.io/v1
+kind: Entry
+metadata:
+  name: main
+definition:
+  displayName: Independent Expert Panel
+  description: Run independent security, operability, and experience reviews.
+  presentation:
+    kind: prompt
+    placeholder: Paste or describe the proposal to review…
+    icon: briefcase
+    allowAttachments: false
+    allowVoiceInput: false
+    suggestions:
+      - label: Review this API proposal
+        value: Review this API proposal from three perspectives.
+      - label: Evaluate this authentication design.
+        value: Evaluate this authentication design.
+    fields:
+      - name: request
+        type: prompt
+        label: Request
+        description: Provide the objective, context, and constraints.
+        placeholder: Paste or describe the proposal to review…
+        required: true
+        order: 0
+        role: primaryInput
+  binding:
+    kind: flow
+    resourceId: main
+  behavior:
+    taskCreationMode: automatic
+    allowConversation: true
+    streamResponse: true
+    conversation:
+      enabled: true
+  publish: true

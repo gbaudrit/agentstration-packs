@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: account-support
+  tags:
+    pack: smart-support-desk
+    role: account-support
+definition:
+  displayName: Account Support
+  description: Handle account-access and profile guidance without claiming account changes.
+  handler: prompt-agent
+  instructions: |
+    Handle account-access and profile guidance without claiming account changes. Return to triage if misrouted and end complete guidance with CASE_RESOLVED.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

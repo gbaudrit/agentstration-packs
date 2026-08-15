@@ -1,0 +1,45 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Smart Support Desk
+  description: Qualify a support request and hand it to the appropriate specialist.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: triage
+      - kind: agent
+        id: technical-support
+      - kind: agent
+        id: account-support
+      - kind: agent
+        id: billing-support
+    pattern:
+      strategy: handoff
+      initialParticipant: triage
+      autonomous: true
+      maximumTurnsPerParticipant: 4
+      terminationPhrase: CASE_RESOLVED
+      handoffs:
+        - from: triage
+          to: technical-support
+        - from: triage
+          to: account-support
+        - from: triage
+          to: billing-support
+        - from: technical-support
+          to: triage
+        - from: account-support
+          to: triage
+        - from: billing-support
+          to: triage
+  metadata:
+    pack: smart-support-desk
+    audience: professional
+    strategy: handoff
+  publish: true
+  activate: true

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentstration.io/schemas/pack-catalog-v1.json",
+  "title": "Agentstration Pack Catalog",
+  "type": "object",
+  "required": [
+    "apiVersion",
+    "kind",
+    "metadata",
+    "spec"
+  ],
+  "properties": {
+    "apiVersion": {
+      "const": "agentstration.io/catalog/v1"
+    },
+    "kind": {
+      "const": "PackCatalog"
+    },
+    "metadata": {
+      "type": "object",
+      "required": [
+        "name",
+        "publisher"
+      ]
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "packs"
+      ],
+      "properties": {
+        "packs": {
+          "type": "array"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

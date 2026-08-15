@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: solution-architect
+  tags:
+    pack: design-review-room
+    role: solution-architect
+definition:
+  displayName: Solution Architect
+  description: Propose boundaries, interfaces, data flow, failure behavior, and technical trade-offs using the shared context.
+  handler: prompt-agent
+  instructions: |
+    Propose boundaries, interfaces, data flow, failure behavior, and technical trade-offs using the shared context.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

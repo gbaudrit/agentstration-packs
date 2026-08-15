@@ -1,0 +1,37 @@
+apiVersion: agentstration.io/v1
+kind: Entry
+metadata:
+  name: main
+definition:
+  displayName: Adaptive Delivery Plan
+  description: Adaptively coordinate specialists to build a delivery plan for a complex initiative.
+  presentation:
+    kind: prompt
+    placeholder: Describe the initiative, constraints, and desired outcome…
+    icon: briefcase
+    allowAttachments: false
+    allowVoiceInput: false
+    suggestions:
+      - label: Plan the migration of
+        value: Plan the migration of a legacy API.
+      - label: Prepare delivery phases for
+        value: Prepare delivery phases for a local-first application.
+    fields:
+      - name: request
+        type: prompt
+        label: Request
+        description: Provide the objective, context, and constraints.
+        placeholder: Describe the initiative, constraints, and desired outcome…
+        required: true
+        order: 0
+        role: primaryInput
+  binding:
+    kind: flow
+    resourceId: main
+  behavior:
+    taskCreationMode: automatic
+    allowConversation: true
+    streamResponse: true
+    conversation:
+      enabled: true
+  publish: true

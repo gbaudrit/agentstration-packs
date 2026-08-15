@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: sustainability-advisor
+  tags:
+    pack: personal-advisor-panel
+    role: sustainability-advisor
+definition:
+  displayName: Sustainability Advisor
+  description: Assess durability, reuse, resource consumption, and long-term impact without claiming unavailable measurements.
+  handler: prompt-agent
+  instructions: |
+    Assess durability, reuse, resource consumption, and long-term impact without claiming unavailable measurements.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

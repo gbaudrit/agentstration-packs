@@ -1,0 +1,17 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: replace-me
+  publisher: agentstration
+  version: 0.1.0
+  audience: universal
+  displayName: Replace Me
+  description: Replace this description.
+  categories: [sample]
+  tags: [orchestration, sequential]
+spec:
+  resources:
+    - agents/first.yaml
+    - agents/final.yaml
+    - flows/main.yaml
+    - entries/main.yaml

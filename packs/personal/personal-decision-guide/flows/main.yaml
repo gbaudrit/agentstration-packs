@@ -1,0 +1,27 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Personal Decision Guide
+  description: Turn an everyday decision into a clear, balanced recommendation.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: need-clarifier
+      - kind: agent
+        id: option-comparer
+      - kind: agent
+        id: recommendation-writer
+    pattern:
+      strategy: sequential
+      includeFullHistory: true
+  metadata:
+    pack: personal-decision-guide
+    audience: personal
+    strategy: sequential
+  publish: true
+  activate: true

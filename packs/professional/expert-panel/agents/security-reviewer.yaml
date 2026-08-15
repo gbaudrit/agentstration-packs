@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: security-reviewer
+  tags:
+    pack: expert-panel
+    role: security-reviewer
+definition:
+  displayName: Security Reviewer
+  description: Review trust boundaries, identity, permissions, data exposure, abuse cases, and secure defaults.
+  handler: prompt-agent
+  instructions: |
+    Review trust boundaries, identity, permissions, data exposure, abuse cases, and secure defaults. State assumptions and avoid compliance claims.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

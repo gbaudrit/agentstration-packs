@@ -1,0 +1,45 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Daily Life Assistant
+  description: Route an everyday request to the most relevant declared specialist.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: concierge
+      - kind: agent
+        id: home-specialist
+      - kind: agent
+        id: tech-specialist
+      - kind: agent
+        id: organization-specialist
+    pattern:
+      strategy: handoff
+      initialParticipant: concierge
+      autonomous: true
+      maximumTurnsPerParticipant: 4
+      terminationPhrase: CASE_COMPLETE
+      handoffs:
+        - from: concierge
+          to: home-specialist
+        - from: concierge
+          to: tech-specialist
+        - from: concierge
+          to: organization-specialist
+        - from: home-specialist
+          to: concierge
+        - from: tech-specialist
+          to: concierge
+        - from: organization-specialist
+          to: concierge
+  metadata:
+    pack: daily-life-assistant
+    audience: personal
+    strategy: handoff
+  publish: true
+  activate: true

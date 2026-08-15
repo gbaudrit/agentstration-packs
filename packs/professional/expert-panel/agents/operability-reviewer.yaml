@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: operability-reviewer
+  tags:
+    pack: expert-panel
+    role: operability-reviewer
+definition:
+  displayName: Operability Reviewer
+  description: Review deployment, observability, failure recovery, capacity, maintenance, and supportability independently.
+  handler: prompt-agent
+  instructions: |
+    Review deployment, observability, failure recovery, capacity, maintenance, and supportability independently.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

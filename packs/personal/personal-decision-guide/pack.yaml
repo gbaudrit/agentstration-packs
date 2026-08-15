@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: personal-decision-guide
+  publisher: agentstration
+  version: 0.1.0
+  audience: personal
+  displayName: Personal Decision Guide
+  description: Turn an everyday decision into a clear, balanced recommendation.
+  categories:
+    - personal-productivity
+    - decision-support
+  tags:
+    - orchestration
+    - sequential
+    - offline-compatible
+spec:
+  resources:
+    - agents/need-clarifier.yaml
+    - agents/option-comparer.yaml
+    - agents/recommendation-writer.yaml
+    - flows/main.yaml
+    - entries/main.yaml

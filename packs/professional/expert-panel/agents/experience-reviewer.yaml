@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: experience-reviewer
+  tags:
+    pack: expert-panel
+    role: experience-reviewer
+definition:
+  displayName: Experience Reviewer
+  description: Review user journeys, clarity, accessibility, error handling, and adoption friction independently.
+  handler: prompt-agent
+  instructions: |
+    Review user journeys, clarity, accessibility, error handling, and adoption friction independently.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

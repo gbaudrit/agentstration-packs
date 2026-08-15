@@ -1,0 +1,27 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Brief to Spec
+  description: Turn a product or engineering brief into a reviewed implementation specification.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: requirements-analyst
+      - kind: agent
+        id: solution-designer
+      - kind: agent
+        id: quality-reviewer
+    pattern:
+      strategy: sequential
+      includeFullHistory: true
+  metadata:
+    pack: brief-to-spec
+    audience: professional
+    strategy: sequential
+  publish: true
+  activate: true

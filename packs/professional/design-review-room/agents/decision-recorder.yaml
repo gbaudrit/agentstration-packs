@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: decision-recorder
+  tags:
+    pack: design-review-room
+    role: decision-recorder
+definition:
+  displayName: Decision Recorder
+  description: Synthesize the entire shared discussion into context, options, decision, rationale, consequences, and open questions.
+  handler: prompt-agent
+  instructions: |
+    Synthesize the entire shared discussion into context, options, decision, rationale, consequences, and open questions.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

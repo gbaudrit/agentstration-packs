@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: brief-to-spec
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  displayName: Brief to Spec
+  description: Turn a product or engineering brief into a reviewed implementation specification.
+  categories:
+    - professional-productivity
+    - product-development
+  tags:
+    - orchestration
+    - sequential
+    - offline-compatible
+spec:
+  resources:
+    - agents/requirements-analyst.yaml
+    - agents/solution-designer.yaml
+    - agents/quality-reviewer.yaml
+    - flows/main.yaml
+    - entries/main.yaml

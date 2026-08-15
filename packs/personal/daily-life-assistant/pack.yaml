@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: daily-life-assistant
+  publisher: agentstration
+  version: 0.1.0
+  audience: personal
+  displayName: Daily Life Assistant
+  description: Route an everyday request to the most relevant declared specialist.
+  categories:
+    - personal-productivity
+    - assistant
+  tags:
+    - orchestration
+    - handoff
+    - offline-compatible
+spec:
+  resources:
+    - agents/concierge.yaml
+    - agents/home-specialist.yaml
+    - agents/tech-specialist.yaml
+    - agents/organization-specialist.yaml
+    - flows/main.yaml
+    - entries/main.yaml

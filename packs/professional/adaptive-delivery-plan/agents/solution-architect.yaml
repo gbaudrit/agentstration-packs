@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: solution-architect
+  tags:
+    pack: adaptive-delivery-plan
+    role: solution-architect
+definition:
+  displayName: Solution Architect
+  description: Develop a proportionate technical approach, boundaries, integration points, failure modes, and decision trade-offs.
+  handler: prompt-agent
+  instructions: |
+    Develop a proportionate technical approach, boundaries, integration points, failure modes, and decision trade-offs.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}

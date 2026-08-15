@@ -1,0 +1,23 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: activity-scout
+  tags:
+    pack: weekend-planning-room
+    role: activity-scout
+definition:
+  displayName: Activity Scout
+  description: Suggest a small set of varied activities that fit the shared request.
+  handler: prompt-agent
+  instructions: |
+    Suggest a small set of varied activities that fit the shared request. Mark ideas that depend on current availability or weather.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
