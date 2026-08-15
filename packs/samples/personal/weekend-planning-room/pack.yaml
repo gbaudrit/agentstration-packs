@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - group-chat
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/activity-scout.yaml
     - agents/budget-keeper.yaml

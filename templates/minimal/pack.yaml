@@ -10,7 +10,7 @@ metadata:
   description: Replace this description.
   categories: [template]
   tags: [orchestration, sequential]
-spec:
+definition:
   resources:
     - agents/first.yaml
     - agents/final.yaml

@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - magentic
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/delivery-manager.yaml
     - agents/requirements-analyst.yaml

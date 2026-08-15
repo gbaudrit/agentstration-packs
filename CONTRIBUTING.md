@@ -5,7 +5,7 @@ Each Pack lives under `packs/<purpose>/<audience>/<name>`, for example `packs/sa
 A contribution must include:
 
 - `pack.yaml`, `README.md`, and `CHANGELOG.md`;
-- every resource listed exactly once in `spec.resources`;
+- every resource listed exactly once in `definition.resources`;
 - an explicit `metadata.audience` matching its collection;
 - an explicit `metadata.purpose` (`sample`, `template`, or `standard`) matching its collection;
 - lowercase kebab-case publisher, Pack, and resource names;

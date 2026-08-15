@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - sequential
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/requirements-analyst.yaml
     - agents/solution-designer.yaml

@@ -25,7 +25,7 @@ def generate() -> str:
             "name": metadata["name"],
             "publisher": metadata["publisher"],
             "purpose": metadata.get("purpose", "standard"),
-            "resourceCount": len(manifest["spec"].get("resources", [])),
+            "resourceCount": len(manifest["definition"].get("resources", [])),
             "source": str(path.parent.relative_to(ROOT)).replace("\\", "/"),
             "strategy": strategy,
             "tags": tags,

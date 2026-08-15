@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - group-chat
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/product-strategist.yaml
     - agents/solution-architect.yaml

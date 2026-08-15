@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - handoff
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/triage.yaml
     - agents/technical-support.yaml

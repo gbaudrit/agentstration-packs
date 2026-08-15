@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - magentic
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/event-coordinator.yaml
     - agents/program-designer.yaml

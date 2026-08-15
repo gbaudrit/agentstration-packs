@@ -36,7 +36,7 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
     root = pack_file.parent
     manifest = load_yaml(pack_file, errors)
     metadata = manifest.get("metadata") or {}
-    spec = manifest.get("spec") or {}
+    definition = manifest.get("definition") or {}
     audience = metadata.get("audience")
     purpose = metadata.get("purpose")
     name = metadata.get("name")
@@ -47,6 +47,10 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
         fail(errors, pack_file, "apiVersion must be agentstration.io/v1")
     if manifest.get("kind") != "Pack":
         fail(errors, pack_file, "kind must be Pack")
+    if "spec" in manifest:
+        fail(errors, pack_file, "legacy Pack 'spec' envelope is unsupported; use 'definition'")
+    if not isinstance(manifest.get("definition"), dict):
+        fail(errors, pack_file, "definition is required and must be an object")
     if audience not in AUDIENCES:
         fail(errors, pack_file, "metadata.audience must be personal, professional, or universal")
     if root.parent.name != audience:
@@ -63,18 +67,18 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
         fail(errors, pack_file, "metadata.publisher must be lowercase kebab-case")
     if not isinstance(version, str) or not SEMVER.fullmatch(version):
         fail(errors, pack_file, "metadata.version must use Semantic Versioning")
-    if spec.get("requirements"):
+    if definition.get("requirements"):
         fail(errors, pack_file, "requirements are unsupported by Pack V1")
     for required in ("README.md", "CHANGELOG.md"):
         if not (root / required).is_file():
             fail(errors, pack_file, f"{required} is required")
 
-    resources = spec.get("resources")
+    resources = definition.get("resources")
     if not isinstance(resources, list) or not resources:
-        fail(errors, pack_file, "spec.resources must be a non-empty list")
+        fail(errors, pack_file, "definition.resources must be a non-empty list")
         return
     if len(resources) != len(set(resources)):
-        fail(errors, pack_file, "spec.resources contains duplicate paths")
+        fail(errors, pack_file, "definition.resources contains duplicate paths")
 
     documents: list[tuple[str, str, str, dict]] = []
     identities: set[tuple[str, str]] = set()

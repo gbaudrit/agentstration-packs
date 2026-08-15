@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - handoff
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/concierge.yaml
     - agents/home-specialist.yaml

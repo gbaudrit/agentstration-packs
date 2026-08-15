@@ -15,7 +15,7 @@ metadata:
     - orchestration
     - concurrent
     - offline-compatible
-spec:
+definition:
   resources:
     - agents/security-reviewer.yaml
     - agents/operability-reviewer.yaml
