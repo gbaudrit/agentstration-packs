@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: brief-to-spec
 definition:
   displayName: Brief to Spec
   description: Turn a product or engineering brief into a reviewed implementation specification.

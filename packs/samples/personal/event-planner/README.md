@@ -10,7 +10,7 @@ Adaptively coordinate specialists to prepare a small personal event.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `magentic` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.event-planner`.
+This Pack is an executable example of Agentstration's `magentic` orchestration. It installs its Agents, one published active Flow named `event-planner`, and one conversational Entry named `event-planner` into the namespace `agentstration.event-planner`.
 
 ## Try it
 

@@ -10,7 +10,7 @@ Run independent security, operability, and experience reviews.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `concurrent` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.expert-panel`.
+This Pack is an executable example of Agentstration's `concurrent` orchestration. It installs its Agents, one published active Flow named `expert-panel`, and one conversational Entry named `expert-panel` into the namespace `agentstration.expert-panel`.
 
 ## Try it
 

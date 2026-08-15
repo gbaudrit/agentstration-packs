@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: personal-decision-guide
 definition:
   displayName: Personal Decision Guide
   description: Turn an everyday decision into a clear, balanced recommendation.

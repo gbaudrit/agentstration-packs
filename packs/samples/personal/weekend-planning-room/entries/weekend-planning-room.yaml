@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: weekend-planning-room
 definition:
   displayName: Weekend Planning Room
   description: Build a balanced weekend plan through one bounded shared discussion.
@@ -27,7 +27,7 @@ definition:
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: weekend-planning-room
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

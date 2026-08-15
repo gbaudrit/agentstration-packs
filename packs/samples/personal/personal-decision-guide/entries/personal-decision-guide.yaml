@@ -1,33 +1,33 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: personal-decision-guide
 definition:
-  displayName: Independent Expert Panel
-  description: Run independent security, operability, and experience reviews.
+  displayName: Personal Decision Guide
+  description: Turn an everyday decision into a clear, balanced recommendation.
   presentation:
     kind: prompt
-    placeholder: Paste or describe the proposal to review…
-    icon: briefcase
+    placeholder: Describe the decision you want help with…
+    icon: sparkles
     allowAttachments: false
     allowVoiceInput: false
     suggestions:
-      - label: Review this API proposal
-        value: Review this API proposal from three perspectives.
-      - label: Evaluate this authentication design.
-        value: Evaluate this authentication design.
+      - label: Help me choose between
+        value: Help me choose between repairing and replacing an appliance.
+      - label: Compare two ideas for
+        value: Compare two ideas for my weekend.
     fields:
       - name: request
         type: prompt
         label: Request
         description: Provide the objective, context, and constraints.
-        placeholder: Paste or describe the proposal to review…
+        placeholder: Describe the decision you want help with…
         required: true
         order: 0
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: personal-decision-guide
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

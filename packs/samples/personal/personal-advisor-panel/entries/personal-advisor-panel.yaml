@@ -1,33 +1,33 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: personal-advisor-panel
 definition:
-  displayName: Personal Decision Guide
-  description: Turn an everyday decision into a clear, balanced recommendation.
+  displayName: Personal Advisor Panel
+  description: Collect independent budget, practicality, and sustainability perspectives.
   presentation:
     kind: prompt
-    placeholder: Describe the decision you want help with…
+    placeholder: Describe the choice you want several independent views on…
     icon: sparkles
     allowAttachments: false
     allowVoiceInput: false
     suggestions:
-      - label: Help me choose between
-        value: Help me choose between repairing and replacing an appliance.
-      - label: Compare two ideas for
-        value: Compare two ideas for my weekend.
+      - label: Give me three perspectives
+        value: Give me three perspectives on buying a new device.
+      - label: Review my idea for
+        value: Review my idea for a home project.
     fields:
       - name: request
         type: prompt
         label: Request
         description: Provide the objective, context, and constraints.
-        placeholder: Describe the decision you want help with…
+        placeholder: Describe the choice you want several independent views on…
         required: true
         order: 0
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: personal-advisor-panel
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

@@ -14,4 +14,6 @@ A contribution must include:
 - bounded orchestration settings and a published active Flow;
 - an Entry bound to a Flow contained in the same Pack.
 
+For a Sample, the primary Flow and Entry must use the Pack's `metadata.name`. Their files follow the same convention: `flows/<pack-name>.yaml` and `entries/<pack-name>.yaml`. Additional resources use a descriptive `<pack-name>-<role>` name.
+
 Run all validation and deterministic build commands from the root before opening a pull request.

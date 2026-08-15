@@ -20,5 +20,5 @@ definition:
     - agents/security-reviewer.yaml
     - agents/operability-reviewer.yaml
     - agents/experience-reviewer.yaml
-    - flows/main.yaml
-    - entries/main.yaml
+    - flows/expert-panel.yaml
+    - entries/expert-panel.yaml

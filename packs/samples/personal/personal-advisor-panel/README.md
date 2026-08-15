@@ -10,7 +10,7 @@ Collect independent budget, practicality, and sustainability perspectives.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `concurrent` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.personal-advisor-panel`.
+This Pack is an executable example of Agentstration's `concurrent` orchestration. It installs its Agents, one published active Flow named `personal-advisor-panel`, and one conversational Entry named `personal-advisor-panel` into the namespace `agentstration.personal-advisor-panel`.
 
 ## Try it
 

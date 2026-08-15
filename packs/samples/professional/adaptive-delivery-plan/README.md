@@ -10,7 +10,7 @@ Adaptively coordinate specialists to build a delivery plan for a complex initiat
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `magentic` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.adaptive-delivery-plan`.
+This Pack is an executable example of Agentstration's `magentic` orchestration. It installs its Agents, one published active Flow named `adaptive-delivery-plan`, and one conversational Entry named `adaptive-delivery-plan` into the namespace `agentstration.adaptive-delivery-plan`.
 
 ## Try it
 

@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: personal-advisor-panel
 definition:
   displayName: Personal Advisor Panel
   description: Collect independent budget, practicality, and sustainability perspectives.

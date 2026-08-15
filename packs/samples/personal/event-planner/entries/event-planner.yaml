@@ -1,33 +1,33 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: event-planner
 definition:
-  displayName: Personal Advisor Panel
-  description: Collect independent budget, practicality, and sustainability perspectives.
+  displayName: Adaptive Event Planner
+  description: Adaptively coordinate specialists to prepare a small personal event.
   presentation:
     kind: prompt
-    placeholder: Describe the choice you want several independent views on…
+    placeholder: Describe the event and its constraints…
     icon: sparkles
     allowAttachments: false
     allowVoiceInput: false
     suggestions:
-      - label: Give me three perspectives
-        value: Give me three perspectives on buying a new device.
-      - label: Review my idea for
-        value: Review my idea for a home project.
+      - label: Plan a small family
+        value: Plan a small family birthday at home.
+      - label: Prepare a weekend gathering
+        value: Prepare a weekend gathering for twelve people.
     fields:
       - name: request
         type: prompt
         label: Request
         description: Provide the objective, context, and constraints.
-        placeholder: Describe the choice you want several independent views on…
+        placeholder: Describe the event and its constraints…
         required: true
         order: 0
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: event-planner
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

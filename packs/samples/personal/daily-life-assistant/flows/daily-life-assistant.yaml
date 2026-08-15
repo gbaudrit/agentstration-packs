@@ -1,7 +1,7 @@
 apiVersion: agentstration.io/v1
 kind: Flow
 metadata:
-  name: main
+  name: daily-life-assistant
 definition:
   displayName: Daily Life Assistant
   description: Route an everyday request to the most relevant declared specialist.

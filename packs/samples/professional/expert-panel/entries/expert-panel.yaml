@@ -1,33 +1,33 @@
 apiVersion: agentstration.io/v1
 kind: Entry
 metadata:
-  name: main
+  name: expert-panel
 definition:
-  displayName: Adaptive Event Planner
-  description: Adaptively coordinate specialists to prepare a small personal event.
+  displayName: Independent Expert Panel
+  description: Run independent security, operability, and experience reviews.
   presentation:
     kind: prompt
-    placeholder: Describe the event and its constraints…
-    icon: sparkles
+    placeholder: Paste or describe the proposal to review…
+    icon: briefcase
     allowAttachments: false
     allowVoiceInput: false
     suggestions:
-      - label: Plan a small family
-        value: Plan a small family birthday at home.
-      - label: Prepare a weekend gathering
-        value: Prepare a weekend gathering for twelve people.
+      - label: Review this API proposal
+        value: Review this API proposal from three perspectives.
+      - label: Evaluate this authentication design.
+        value: Evaluate this authentication design.
     fields:
       - name: request
         type: prompt
         label: Request
         description: Provide the objective, context, and constraints.
-        placeholder: Describe the event and its constraints…
+        placeholder: Paste or describe the proposal to review…
         required: true
         order: 0
         role: primaryInput
   binding:
     kind: flow
-    resourceId: main
+    resourceId: expert-panel
   behavior:
     taskCreationMode: automatic
     allowConversation: true
@@ -35,4 +35,3 @@ definition:
     conversation:
       enabled: true
   publish: true
-

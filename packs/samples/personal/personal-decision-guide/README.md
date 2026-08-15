@@ -10,7 +10,7 @@ Turn an everyday decision into a clear, balanced recommendation.
 
 ## What this Pack demonstrates
 
-This Pack is an executable example of Agentstration's `sequential` orchestration. It installs its Agents, one published active Flow named `main`, and one conversational Entry named `main` into the namespace `agentstration.personal-decision-guide`.
+This Pack is an executable example of Agentstration's `sequential` orchestration. It installs its Agents, one published active Flow named `personal-decision-guide`, and one conversational Entry named `personal-decision-guide` into the namespace `agentstration.personal-decision-guide`.
 
 ## Try it
 
