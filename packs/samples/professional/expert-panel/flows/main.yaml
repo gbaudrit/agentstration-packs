@@ -1,0 +1,26 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Independent Expert Panel
+  description: Run independent security, operability, and experience reviews.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: security-reviewer
+      - kind: agent
+        id: operability-reviewer
+      - kind: agent
+        id: experience-reviewer
+    pattern:
+      strategy: concurrent
+  metadata:
+    pack: expert-panel
+    audience: professional
+    strategy: concurrent
+  publish: true
+  activate: true

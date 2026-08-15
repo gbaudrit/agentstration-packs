@@ -1,0 +1,38 @@
+name: Pack proposal
+description: Propose a new official Agentstration Pack.
+title: "[Pack]: "
+labels: ["pack:new"]
+body:
+  - type: dropdown
+    id: purpose
+    attributes:
+      label: Purpose
+      options: [Sample, Template, Standard]
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Audience
+      options: [Personal, Professional, Universal]
+    validations:
+      required: true
+  - type: dropdown
+    id: strategy
+    attributes:
+      label: Primary orchestration
+      options: [Direct, Routing, Workflow, Sequential, Concurrent, Handoff, Group Chat, Magentic]
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome
+      description: What useful outcome should the Pack deliver?
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Expected resources and integrations
+      description: List Agents, Flows, Entries, tools, providers, and sensitive data requirements.

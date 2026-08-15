@@ -1,0 +1,25 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: smart-support-desk
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  purpose: sample
+  displayName: Smart Support Desk
+  description: Qualify a support request and hand it to the appropriate specialist.
+  categories:
+    - customer-support
+    - operations
+  tags:
+    - orchestration
+    - handoff
+    - offline-compatible
+definition:
+  resources:
+    - agents/triage.yaml
+    - agents/technical-support.yaml
+    - agents/account-support.yaml
+    - agents/billing-support.yaml
+    - flows/main.yaml
+    - entries/main.yaml

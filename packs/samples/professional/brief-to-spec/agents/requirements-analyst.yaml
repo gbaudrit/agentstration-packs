@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: requirements-analyst
+  tags:
+    pack: brief-to-spec
+    role: requirements-analyst
+definition:
+  displayName: Requirements Analyst
+  description: Extract goals, actors, constraints, assumptions, functional requirements, non-functional requirements, and open questions.
+  handler: prompt-agent
+  instructions: |
+    Extract goals, actors, constraints, assumptions, functional requirements, non-functional requirements, and open questions. Do not design the solution yet.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

@@ -1,0 +1,26 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: adaptive-delivery-plan
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  purpose: sample
+  displayName: Adaptive Delivery Plan
+  description: Adaptively coordinate specialists to build a delivery plan for a complex initiative.
+  categories:
+    - delivery
+    - planning
+  tags:
+    - orchestration
+    - magentic
+    - offline-compatible
+definition:
+  resources:
+    - agents/delivery-manager.yaml
+    - agents/requirements-analyst.yaml
+    - agents/solution-architect.yaml
+    - agents/risk-analyst.yaml
+    - agents/delivery-planner.yaml
+    - flows/main.yaml
+    - entries/main.yaml

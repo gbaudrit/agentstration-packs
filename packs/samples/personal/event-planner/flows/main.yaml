@@ -1,0 +1,34 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Adaptive Event Planner
+  description: Adaptively coordinate specialists to prepare a small personal event.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: program-designer
+      - kind: agent
+        id: logistics-planner
+      - kind: agent
+        id: budget-planner
+      - kind: agent
+        id: checklist-writer
+    pattern:
+      strategy: magentic
+      manager:
+        kind: agent
+        id: event-coordinator
+      maximumRounds: 12
+      maximumStalls: 3
+      maximumResets: 1
+  metadata:
+    pack: event-planner
+    audience: personal
+    strategy: magentic
+  publish: true
+  activate: true

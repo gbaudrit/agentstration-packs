@@ -1,0 +1,25 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: weekend-planning-room
+  publisher: agentstration
+  version: 0.1.0
+  audience: personal
+  purpose: sample
+  displayName: Weekend Planning Room
+  description: Build a balanced weekend plan through one bounded shared discussion.
+  categories:
+    - leisure
+    - planning
+  tags:
+    - orchestration
+    - group-chat
+    - offline-compatible
+definition:
+  resources:
+    - agents/activity-scout.yaml
+    - agents/budget-keeper.yaml
+    - agents/logistics-planner.yaml
+    - agents/plan-editor.yaml
+    - flows/main.yaml
+    - entries/main.yaml

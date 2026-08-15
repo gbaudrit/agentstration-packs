@@ -1,0 +1,25 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: design-review-room
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  purpose: sample
+  displayName: Design Review Room
+  description: Run a bounded collaborative design review and record a final decision.
+  categories:
+    - architecture
+    - product-development
+  tags:
+    - orchestration
+    - group-chat
+    - offline-compatible
+definition:
+  resources:
+    - agents/product-strategist.yaml
+    - agents/solution-architect.yaml
+    - agents/critical-reviewer.yaml
+    - agents/decision-recorder.yaml
+    - flows/main.yaml
+    - entries/main.yaml

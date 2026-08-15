@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: expert-panel
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  purpose: sample
+  displayName: Independent Expert Panel
+  description: Run independent security, operability, and experience reviews.
+  categories:
+    - professional-productivity
+    - review
+  tags:
+    - orchestration
+    - concurrent
+    - offline-compatible
+definition:
+  resources:
+    - agents/security-reviewer.yaml
+    - agents/operability-reviewer.yaml
+    - agents/experience-reviewer.yaml
+    - flows/main.yaml
+    - entries/main.yaml

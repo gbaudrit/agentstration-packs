@@ -1,0 +1,38 @@
+apiVersion: agentstration.io/v1
+kind: Entry
+metadata:
+  name: main
+definition:
+  displayName: Smart Support Desk
+  description: Qualify a support request and hand it to the appropriate specialist.
+  presentation:
+    kind: prompt
+    placeholder: Describe the support request…
+    icon: briefcase
+    allowAttachments: false
+    allowVoiceInput: false
+    suggestions:
+      - label: A user cannot start
+        value: A user cannot start the application.
+      - label: A customer has a
+        value: A customer has a question about an invoice.
+    fields:
+      - name: request
+        type: prompt
+        label: Request
+        description: Provide the objective, context, and constraints.
+        placeholder: Describe the support request…
+        required: true
+        order: 0
+        role: primaryInput
+  binding:
+    kind: flow
+    resourceId: main
+  behavior:
+    taskCreationMode: automatic
+    allowConversation: true
+    streamResponse: true
+    conversation:
+      enabled: true
+  publish: true
+

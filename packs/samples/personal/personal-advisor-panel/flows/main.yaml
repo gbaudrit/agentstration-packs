@@ -1,0 +1,26 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Personal Advisor Panel
+  description: Collect independent budget, practicality, and sustainability perspectives.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: budget-advisor
+      - kind: agent
+        id: practicality-advisor
+      - kind: agent
+        id: sustainability-advisor
+    pattern:
+      strategy: concurrent
+  metadata:
+    pack: personal-advisor-panel
+    audience: personal
+    strategy: concurrent
+  publish: true
+  activate: true

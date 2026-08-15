@@ -1,0 +1,29 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Design Review Room
+  description: Run a bounded collaborative design review and record a final decision.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: product-strategist
+      - kind: agent
+        id: solution-architect
+      - kind: agent
+        id: critical-reviewer
+      - kind: agent
+        id: decision-recorder
+    pattern:
+      strategy: groupChat
+      maximumIterations: 4
+  metadata:
+    pack: design-review-room
+    audience: professional
+    strategy: groupChat
+  publish: true
+  activate: true

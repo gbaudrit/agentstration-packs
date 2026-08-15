@@ -1,0 +1,24 @@
+apiVersion: agentstration.io/v1
+kind: Agent
+metadata:
+  name: budget-advisor
+  tags:
+    pack: personal-advisor-panel
+    role: budget-advisor
+definition:
+  displayName: Budget Advisor
+  description: Assess the request from a budget perspective.
+  handler: prompt-agent
+  instructions: |
+    Assess the request from a budget perspective. Identify costs, financial risks, and questions without inventing exact prices.
+    Base every answer only on the user input and shared orchestration context.
+    Be explicit about assumptions and information that must be verified externally.
+  modelProfile:
+    name: reasoning-default
+    namespace: default
+  tools: []
+  behaviors: []
+  middleware: []
+  contextProviders: []
+  settings: {}
+

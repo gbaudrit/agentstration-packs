@@ -1,0 +1,29 @@
+apiVersion: agentstration.io/v1
+kind: Flow
+metadata:
+  name: main
+definition:
+  displayName: Weekend Planning Room
+  description: Build a balanced weekend plan through one bounded shared discussion.
+  version: 0.1.0
+  enabled: true
+  spec:
+    flowKind: orchestration
+    participants:
+      - kind: agent
+        id: activity-scout
+      - kind: agent
+        id: budget-keeper
+      - kind: agent
+        id: logistics-planner
+      - kind: agent
+        id: plan-editor
+    pattern:
+      strategy: groupChat
+      maximumIterations: 4
+  metadata:
+    pack: weekend-planning-room
+    audience: personal
+    strategy: groupChat
+  publish: true
+  activate: true

@@ -1,0 +1,38 @@
+apiVersion: agentstration.io/v1
+kind: Entry
+metadata:
+  name: main
+definition:
+  displayName: Brief to Spec
+  description: Turn a product or engineering brief into a reviewed implementation specification.
+  presentation:
+    kind: prompt
+    placeholder: Describe the feature, change, or product idea…
+    icon: briefcase
+    allowAttachments: false
+    allowVoiceInput: false
+    suggestions:
+      - label: Specify a price-monitoring automation.
+        value: Specify a price-monitoring automation.
+      - label: Turn these product notes
+        value: Turn these product notes into an implementation brief.
+    fields:
+      - name: request
+        type: prompt
+        label: Request
+        description: Provide the objective, context, and constraints.
+        placeholder: Describe the feature, change, or product idea…
+        required: true
+        order: 0
+        role: primaryInput
+  binding:
+    kind: flow
+    resourceId: main
+  behavior:
+    taskCreationMode: automatic
+    allowConversation: true
+    streamResponse: true
+    conversation:
+      enabled: true
+  publish: true
+

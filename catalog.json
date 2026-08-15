@@ -1,0 +1,222 @@
+{
+  "apiVersion": "agentstration.io/catalog/v1",
+  "kind": "PackCatalog",
+  "metadata": {
+    "name": "official",
+    "publisher": "agentstration"
+  },
+  "spec": {
+    "packs": [
+      {
+        "audience": "personal",
+        "categories": [
+          "personal-productivity",
+          "assistant"
+        ],
+        "description": "Route an everyday request to the most relevant declared specialist.",
+        "displayName": "Daily Life Assistant",
+        "name": "daily-life-assistant",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 6,
+        "source": "packs/samples/personal/daily-life-assistant",
+        "strategy": "handoff",
+        "tags": [
+          "orchestration",
+          "handoff",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "personal",
+        "categories": [
+          "events",
+          "planning"
+        ],
+        "description": "Adaptively coordinate specialists to prepare a small personal event.",
+        "displayName": "Adaptive Event Planner",
+        "name": "event-planner",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 7,
+        "source": "packs/samples/personal/event-planner",
+        "strategy": "magentic",
+        "tags": [
+          "orchestration",
+          "magentic",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "personal",
+        "categories": [
+          "personal-productivity",
+          "decision-support"
+        ],
+        "description": "Collect independent budget, practicality, and sustainability perspectives.",
+        "displayName": "Personal Advisor Panel",
+        "name": "personal-advisor-panel",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 5,
+        "source": "packs/samples/personal/personal-advisor-panel",
+        "strategy": "concurrent",
+        "tags": [
+          "orchestration",
+          "concurrent",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "personal",
+        "categories": [
+          "personal-productivity",
+          "decision-support"
+        ],
+        "description": "Turn an everyday decision into a clear, balanced recommendation.",
+        "displayName": "Personal Decision Guide",
+        "name": "personal-decision-guide",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 5,
+        "source": "packs/samples/personal/personal-decision-guide",
+        "strategy": "sequential",
+        "tags": [
+          "orchestration",
+          "sequential",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "personal",
+        "categories": [
+          "leisure",
+          "planning"
+        ],
+        "description": "Build a balanced weekend plan through one bounded shared discussion.",
+        "displayName": "Weekend Planning Room",
+        "name": "weekend-planning-room",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 6,
+        "source": "packs/samples/personal/weekend-planning-room",
+        "strategy": "group-chat",
+        "tags": [
+          "orchestration",
+          "group-chat",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "categories": [
+          "delivery",
+          "planning"
+        ],
+        "description": "Adaptively coordinate specialists to build a delivery plan for a complex initiative.",
+        "displayName": "Adaptive Delivery Plan",
+        "name": "adaptive-delivery-plan",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 7,
+        "source": "packs/samples/professional/adaptive-delivery-plan",
+        "strategy": "magentic",
+        "tags": [
+          "orchestration",
+          "magentic",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "categories": [
+          "professional-productivity",
+          "product-development"
+        ],
+        "description": "Turn a product or engineering brief into a reviewed implementation specification.",
+        "displayName": "Brief to Spec",
+        "name": "brief-to-spec",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 5,
+        "source": "packs/samples/professional/brief-to-spec",
+        "strategy": "sequential",
+        "tags": [
+          "orchestration",
+          "sequential",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "categories": [
+          "architecture",
+          "product-development"
+        ],
+        "description": "Run a bounded collaborative design review and record a final decision.",
+        "displayName": "Design Review Room",
+        "name": "design-review-room",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 6,
+        "source": "packs/samples/professional/design-review-room",
+        "strategy": "group-chat",
+        "tags": [
+          "orchestration",
+          "group-chat",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "categories": [
+          "professional-productivity",
+          "review"
+        ],
+        "description": "Run independent security, operability, and experience reviews.",
+        "displayName": "Independent Expert Panel",
+        "name": "expert-panel",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 5,
+        "source": "packs/samples/professional/expert-panel",
+        "strategy": "concurrent",
+        "tags": [
+          "orchestration",
+          "concurrent",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "categories": [
+          "customer-support",
+          "operations"
+        ],
+        "description": "Qualify a support request and hand it to the appropriate specialist.",
+        "displayName": "Smart Support Desk",
+        "name": "smart-support-desk",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 6,
+        "source": "packs/samples/professional/smart-support-desk",
+        "strategy": "handoff",
+        "tags": [
+          "orchestration",
+          "handoff",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
+      }
+    ]
+  }
+}
