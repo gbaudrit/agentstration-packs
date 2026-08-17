@@ -30,6 +30,8 @@ packs/
 
 All audiences and purposes use the same Pack contract and installation lifecycle. They are discovery metadata, not separate runtimes or security boundaries.
 
+Official Samples use logical install-time bindings for environment resources. The installer asks the user to select an available Model Profile for `agent-model`; Packs do not assume a profile named `default/reasoning-default` exists.
+
 ## Initial sample coverage
 
 | Strategy | Personal | Professional |
@@ -45,8 +47,9 @@ All audiences and purposes use the same Pack contract and installation lifecycle
 ```bash
 python -m pip install -r requirements-dev.txt
 python scripts/validate_packs.py
+python -m unittest discover -s tests
 python scripts/generate_catalog.py --check
 python scripts/build_packs.py --output dist
 ```
 
-The repository validator checks catalog conventions and orchestration references. Agentstration preview/install remains the authoritative product validation boundary.
+The repository validator checks catalog conventions, orchestration references, and Pack binding declarations and usages. Agentstration preview/install remains the authoritative product validation boundary.

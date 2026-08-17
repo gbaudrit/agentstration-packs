@@ -16,6 +16,12 @@ metadata:
     - group-chat
     - offline-compatible
 definition:
+  bindings:
+    - name: agent-model
+      targetKind: modelProfile
+      displayName: Agent model
+      description: Model profile used by all agents in this Pack.
+      required: true
   resources:
     - agents/activity-scout.yaml
     - agents/budget-keeper.yaml

@@ -30,9 +30,66 @@
       ],
       "properties": {
         "packs": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "audience",
+              "bindings",
+              "categories",
+              "displayName",
+              "name",
+              "publisher",
+              "purpose",
+              "resourceCount",
+              "source",
+              "tags",
+              "version"
+            ],
+            "properties": {
+              "audience": {
+                "enum": ["personal", "professional", "universal"]
+              },
+              "bindings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["name", "required", "targetKind"],
+                  "properties": {
+                    "name": { "type": "string" },
+                    "required": { "type": "boolean" },
+                    "targetKind": {
+                      "enum": ["modelProfile", "secret"]
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "categories": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "description": { "type": ["string", "null"] },
+              "displayName": { "type": "string" },
+              "name": { "type": "string" },
+              "publisher": { "type": "string" },
+              "purpose": {
+                "enum": ["sample", "template", "standard"]
+              },
+              "resourceCount": { "type": "integer", "minimum": 1 },
+              "source": { "type": "string" },
+              "strategy": { "type": ["string", "null"] },
+              "tags": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "version": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

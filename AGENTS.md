@@ -7,6 +7,8 @@ This repository contains official Agentstration Pack source, not product runtime
 - Keep Sample, Template, and Standard as metadata purposes, never separate Pack kinds or lifecycle implementations.
 - Store published Packs under `packs/<purpose>/<audience>/<name>` and keep both metadata axes aligned with the path.
 - Never add secrets, personal data, generated ZIP files, or undeclared external integrations.
+- Prefer logical Pack bindings over hard-coded external Model Profile or Secret references. Never store secret values in a Pack.
+- Use `agent-model` for a single Model Profile shared by every Agent in a Pack; use role-specific binding names only when the Pack genuinely requires independent selections.
 - Unqualified resource references must resolve inside the Pack namespace. External references require an explicit namespace.
 - Every Flow must be published and active; every Entry must bind to a contained Flow.
 - A Sample's primary Flow and Entry, including their file names, must match the Pack name. Name additional resources `<pack-name>-<role>`.
