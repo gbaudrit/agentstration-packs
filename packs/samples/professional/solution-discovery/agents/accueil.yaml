@@ -16,8 +16,7 @@ definition:
     Base chaque réponse uniquement sur la demande de l'utilisateur et le contexte partagé de l'orchestration.
     N'invente jamais une fonctionnalité ou une capacité qui n'est pas présente dans le contexte.
   modelProfile:
-    name: reasoning-default
-    namespace: default
+    binding: agent-model
   tools: []
   behaviors: []
   middleware: []
