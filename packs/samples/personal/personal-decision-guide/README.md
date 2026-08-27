@@ -19,7 +19,7 @@ This Pack is an executable example of Agentstration's `sequential` orchestration
 
 ## Requirements and limits
 
-- The shared Model Profile `default/reasoning-default` must exist.
+- Installation requires selecting an available Model Profile for the required `agent-model` binding. The selection is retained for this Pack identity; a fork requires its own selection.
 - Agent installation does not yet create Runtime revisions and deployments automatically.
 - The Entry must be exposed in a Workplace Workspace after installation.
 - The Pack uses no external tools and must not claim to have performed external actions.

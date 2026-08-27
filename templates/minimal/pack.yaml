@@ -11,6 +11,12 @@ metadata:
   categories: [template]
   tags: [orchestration, sequential]
 definition:
+  bindings:
+    - name: agent-model
+      targetKind: modelProfile
+      displayName: Agent model
+      description: Model profile used by all agents in this Pack.
+      required: true
   resources:
     - agents/first.yaml
     - agents/final.yaml

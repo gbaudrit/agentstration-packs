@@ -16,6 +16,12 @@ metadata:
     - concurrent
     - offline-compatible
 definition:
+  bindings:
+    - name: agent-model
+      targetKind: modelProfile
+      displayName: Agent model
+      description: Model profile used by all agents in this Pack.
+      required: true
   resources:
     - agents/security-reviewer.yaml
     - agents/operability-reviewer.yaml

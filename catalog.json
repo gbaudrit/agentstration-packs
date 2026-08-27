@@ -9,6 +9,13 @@
     "packs": [
       {
         "audience": "personal",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "personal-productivity",
           "assistant"
@@ -30,6 +37,13 @@
       },
       {
         "audience": "personal",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "events",
           "planning"
@@ -51,6 +65,13 @@
       },
       {
         "audience": "personal",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "personal-productivity",
           "decision-support"
@@ -72,6 +93,13 @@
       },
       {
         "audience": "personal",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "personal-productivity",
           "decision-support"
@@ -93,6 +121,13 @@
       },
       {
         "audience": "personal",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "leisure",
           "planning"
@@ -114,6 +149,13 @@
       },
       {
         "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "delivery",
           "planning"
@@ -135,6 +177,13 @@
       },
       {
         "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "professional-productivity",
           "product-development"
@@ -156,6 +205,13 @@
       },
       {
         "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "architecture",
           "product-development"
@@ -177,6 +233,13 @@
       },
       {
         "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "professional-productivity",
           "review"
@@ -198,6 +261,13 @@
       },
       {
         "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
         "categories": [
           "customer-support",
           "operations"

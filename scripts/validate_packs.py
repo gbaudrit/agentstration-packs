@@ -14,6 +14,8 @@ PURPOSE_COLLECTIONS = {"sample": "samples", "template": "templates", "standard":
 SUPPORTED_KINDS = {"ModelProvider", "RuntimeProfile", "ModelProfile", "Agent", "Flow", "Entry"}
 NAME = re.compile(r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$")
 SEMVER = re.compile(r"^\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?$")
+BINDING_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9.-]{0,127}$")
+BINDING_TARGET_KINDS = {"modelProfile", "secret"}
 
 
 def fail(errors: list[str], path: Path, message: str) -> None:
@@ -30,6 +32,51 @@ def load_yaml(path: Path, errors: list[str]) -> dict:
         fail(errors, path, "document root must be an object")
         return {}
     return value
+
+
+def collect_binding_references(value: object) -> list[object]:
+    references: list[object] = []
+    if isinstance(value, dict):
+        if set(value) == {"binding"}:
+            binding = value.get("binding")
+            references.append(binding)
+        else:
+            for child in value.values():
+                references.extend(collect_binding_references(child))
+    elif isinstance(value, list):
+        for child in value:
+            references.extend(collect_binding_references(child))
+    return references
+
+
+def validate_binding_declarations(definition: dict, pack_file: Path, errors: list[str]) -> dict[str, str]:
+    bindings = definition.get("bindings", [])
+    declared_bindings: dict[str, str] = {}
+    if not isinstance(bindings, list):
+        fail(errors, pack_file, "definition.bindings must be a list")
+        return declared_bindings
+    for index, binding in enumerate(bindings):
+        location = f"definition.bindings[{index}]"
+        if not isinstance(binding, dict):
+            fail(errors, pack_file, f"{location} must be an object")
+            continue
+        binding_name = binding.get("name")
+        target_kind = binding.get("targetKind")
+        if not isinstance(binding_name, str) or not BINDING_NAME.fullmatch(binding_name):
+            fail(errors, pack_file, f"{location}.name must be 1-128 ASCII letters, digits, dots, or hyphens and begin with a letter or digit")
+            continue
+        if binding_name in declared_bindings:
+            fail(errors, pack_file, f"duplicate binding declaration: {binding_name}")
+        if target_kind not in BINDING_TARGET_KINDS:
+            fail(errors, pack_file, f"{location}.targetKind must be modelProfile or secret")
+        else:
+            declared_bindings[binding_name] = target_kind
+        if "required" in binding and not isinstance(binding["required"], bool):
+            fail(errors, pack_file, f"{location}.required must be a boolean")
+        for field in ("displayName", "description"):
+            if field in binding and not isinstance(binding[field], str):
+                fail(errors, pack_file, f"{location}.{field} must be a string")
+    return declared_bindings
 
 
 def validate_pack(pack_file: Path, errors: list[str]) -> None:
@@ -69,6 +116,8 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
         fail(errors, pack_file, "metadata.version must use Semantic Versioning")
     if definition.get("requirements"):
         fail(errors, pack_file, "requirements are unsupported by Pack V1")
+
+    declared_bindings = validate_binding_declarations(definition, pack_file, errors)
     for required in ("README.md", "CHANGELOG.md"):
         if not (root / required).is_file():
             fail(errors, pack_file, f"{required} is required")
@@ -115,6 +164,19 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
     agent_names = {name for _, kind, name, _ in documents if kind == "Agent"}
     flow_names = {name for _, kind, name, _ in documents if kind == "Flow"}
     entry_names = {name for _, kind, name, _ in documents if kind == "Entry"}
+    referenced_bindings: set[str] = set()
+    for relative, _, _, document in documents:
+        path = root / relative
+        for binding_name in collect_binding_references(document):
+            if not isinstance(binding_name, str) or not BINDING_NAME.fullmatch(binding_name):
+                fail(errors, path, "binding references must use a valid binding name")
+                continue
+            referenced_bindings.add(binding_name)
+            if binding_name not in declared_bindings:
+                fail(errors, path, f"unknown Pack binding: {binding_name}")
+    unused_bindings = sorted(set(declared_bindings) - referenced_bindings)
+    if unused_bindings:
+        fail(errors, pack_file, f"unused Pack bindings: {', '.join(unused_bindings)}")
     if purpose == "sample":
         if name not in flow_names or f"flows/{name}.yaml" not in resources:
             fail(errors, pack_file, "a Sample's primary Flow name and file must match metadata.name")
@@ -123,7 +185,17 @@ def validate_pack(pack_file: Path, errors: list[str]) -> None:
     for relative, kind, resource_name, document in documents:
         path = root / relative
         definition = document.get("definition") or {}
-        if kind == "Flow":
+        if kind == "Agent":
+            model_profile = definition.get("modelProfile")
+            if not isinstance(model_profile, dict):
+                fail(errors, path, "Agent definition.modelProfile must be an object")
+            elif set(model_profile) == {"binding"}:
+                binding_name = model_profile.get("binding")
+                if declared_bindings.get(binding_name) != "modelProfile":
+                    fail(errors, path, "Agent modelProfile binding must target modelProfile")
+            elif purpose == "sample":
+                fail(errors, path, "official Samples must select Agent model profiles through a Pack binding")
+        elif kind == "Flow":
             flow_spec = definition.get("spec") or {}
             if flow_spec.get("flowKind") != "orchestration":
                 fail(errors, path, "official orchestration samples must use flowKind: orchestration")

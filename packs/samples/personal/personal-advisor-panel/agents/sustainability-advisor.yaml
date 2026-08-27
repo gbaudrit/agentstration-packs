@@ -14,8 +14,7 @@ definition:
     Base every answer only on the user input and shared orchestration context.
     Be explicit about assumptions and information that must be verified externally.
   modelProfile:
-    name: reasoning-default
-    namespace: default
+    binding: agent-model
   tools: []
   behaviors: []
   middleware: []

@@ -15,17 +15,26 @@ def generate() -> str:
     for path in sorted((ROOT / "packs").glob("*/*/*/pack.yaml")):
         manifest = yaml.safe_load(path.read_text(encoding="utf-8"))
         metadata = manifest["metadata"]
+        definition = manifest["definition"]
         tags = metadata.get("tags", [])
         strategy = next((tag for tag in tags if tag in {"sequential", "concurrent", "handoff", "group-chat", "magentic"}), None)
         packs.append({
             "audience": metadata["audience"],
+            "bindings": [
+                {
+                    "name": binding["name"],
+                    "required": binding.get("required", True),
+                    "targetKind": binding["targetKind"],
+                }
+                for binding in definition.get("bindings", [])
+            ],
             "categories": metadata.get("categories", []),
             "description": metadata.get("description"),
             "displayName": metadata.get("displayName", metadata["name"]),
             "name": metadata["name"],
             "publisher": metadata["publisher"],
             "purpose": metadata.get("purpose", "standard"),
-            "resourceCount": len(manifest["definition"].get("resources", [])),
+            "resourceCount": len(definition.get("resources", [])),
             "source": str(path.parent.relative_to(ROOT)).replace("\\", "/"),
             "strategy": strategy,
             "tags": tags,
