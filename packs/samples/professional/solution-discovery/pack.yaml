@@ -17,6 +17,12 @@ metadata:
     - demo
     - offline-compatible
 definition:
+  bindings:
+    - name: agent-model
+      targetKind: modelProfile
+      displayName: Modèle des agents
+      description: Profil de modèle utilisé par tous les agents de ce Pack.
+      required: true
   resources:
     - agents/accueil.yaml
     - agents/conseiller-solution.yaml
