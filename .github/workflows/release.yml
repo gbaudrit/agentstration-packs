@@ -21,12 +21,10 @@ jobs:
       - run: python -m pip install -r requirements-dev.txt
       - run: python scripts/validate_packs.py
       - run: python -m unittest discover -s tests
-      - name: Resolve Pack
-        shell: bash
-        run: |
-          value="${GITHUB_REF_NAME#pack/}"
-          echo "PACK_NAME=${value%/v*}" >> "$GITHUB_ENV"
-      - run: python scripts/build_packs.py --output dist --pack "$PACK_NAME" --verify-deterministic
+      - name: Resolve and validate Pack release
+        id: pack
+        run: python scripts/resolve_pack_release.py --tag "$GITHUB_REF_NAME" >> "$GITHUB_OUTPUT"
+      - run: python scripts/build_packs.py --output dist --pack "${{ steps.pack.outputs.name }}" --verify-deterministic
       - name: Publish release
         env:
           GH_TOKEN: ${{ github.token }}
