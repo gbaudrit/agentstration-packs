@@ -9,7 +9,7 @@ Sample professionnel conçu pour démontrer une orchestration **Handoff** avec M
 - **Expert technique** — répond sur l'architecture, les modèles et l'exécution locale.
 - **Expert intégration** — répond sur les tools, MCP, AEP et les systèmes externes.
 
-Le flow déclare les participants et les routes de handoff autorisées. La sélection du prochain participant est gérée par l'orchestration Handoff du runtime, pas par un workflow séquentiel codé dans les prompts.
+Le flow démarre avec l'Agent d'accueil et autorise ensuite les handoffs entre tous les spécialistes ainsi que les retours vers l'accueil. La sélection du prochain participant est gérée par l'orchestration Handoff du runtime, pas par un workflow séquentiel codé dans les prompts.
 
 ## Conversation de démonstration
 

@@ -286,6 +286,35 @@
           "offline-compatible"
         ],
         "version": "0.1.0"
+      },
+      {
+        "audience": "professional",
+        "bindings": [
+          {
+            "name": "agent-model",
+            "required": true,
+            "targetKind": "modelProfile"
+          }
+        ],
+        "categories": [
+          "product-discovery",
+          "professional"
+        ],
+        "description": "D\u00e9couvrez Agentstration en \u00e9changeant avec une \u00e9quipe de sp\u00e9cialistes qui se transmettent naturellement la conversation.",
+        "displayName": "D\u00e9couvrir Agentstration",
+        "name": "solution-discovery",
+        "publisher": "agentstration",
+        "purpose": "sample",
+        "resourceCount": 6,
+        "source": "packs/samples/professional/solution-discovery",
+        "strategy": "handoff",
+        "tags": [
+          "orchestration",
+          "handoff",
+          "demo",
+          "offline-compatible"
+        ],
+        "version": "0.1.0"
       }
     ]
   }

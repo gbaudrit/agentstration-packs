@@ -3,7 +3,7 @@ kind: Flow
 metadata:
   name: solution-discovery
 definition:
-  displayName: Découverte de la solution
+  displayName: Découvrir Agentstration
   description: Une équipe de spécialistes se transmet la conversation selon les sujets abordés par l'utilisateur.
   version: 0.1.0
   enabled: true
