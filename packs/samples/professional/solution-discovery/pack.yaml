@@ -1,0 +1,26 @@
+apiVersion: agentstration.io/v1
+kind: Pack
+metadata:
+  name: solution-discovery
+  publisher: agentstration
+  version: 0.1.0
+  audience: professional
+  purpose: sample
+  displayName: Découvrir Agentstration
+  description: Découvrez Agentstration en échangeant avec une équipe de spécialistes qui se transmettent naturellement la conversation.
+  categories:
+    - product-discovery
+    - professional
+  tags:
+    - orchestration
+    - handoff
+    - demo
+    - offline-compatible
+definition:
+  resources:
+    - agents/accueil.yaml
+    - agents/conseiller-solution.yaml
+    - agents/expert-technique.yaml
+    - agents/expert-integration.yaml
+    - flows/solution-discovery.yaml
+    - entries/solution-discovery.yaml
